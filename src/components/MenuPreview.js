@@ -2,11 +2,23 @@ import React from "react";
 import FoodItem from "./FoodItem";
 import "../App.css";
 
-const fuck = {
-  id: 1001,
-  name: "Kale Caesar Pasta, Turmeric Satay Broccoli & Lemon Cashew Greens",
-  dietaries: ["v", "ve", "df", "gf", "n!"],
-};
+const test = [
+  {
+    id: 1001,
+    name: "Kale Caesar Pasta",
+    dietaries: ["v", "ve"],
+  },
+  {
+    id: 1002,
+    name: "Turmeric Satay Broccoli",
+    dietaries: ["df", "gf"],
+  },
+  {
+    id: 1003,
+    name: "Lemon Cashew Greens",
+    dietaries: ["n!"],
+  },
+];
 function MenuPreview() {
   return (
     <div className="col-8">
@@ -14,20 +26,20 @@ function MenuPreview() {
       <ul className="menu-preview">
         <FoodItem
           removable={true}
-          key={fuck.id}
-          item={fuck}
+          key={test[0].id}
+          item={test[0]}
           // addItemFromSideBar={props.addItemFromSideBar}
         />
         <FoodItem
           removable={true}
-          key={fuck.id}
-          item={fuck}
+          key={test[1].id}
+          item={test[1]}
           // addItemFromSideBar={props.addItemFromSideBar}
         />
         <FoodItem
           removable={true}
-          key={fuck.id}
-          item={fuck}
+          key={test[2].id}
+          item={test[2]}
           // addItemFromSideBar={props.addItemFromSideBar}
         />
       </ul>
