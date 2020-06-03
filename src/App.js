@@ -1,126 +1,66 @@
-import React from 'react';
-import './App.css';
+// import React, { useState } from "react";
+import React from "react";
+import MenuSummary from "./components/MenuSummary";
+import MenuPreview from "./components/MenuPreview";
+import SideMenu from "./components/SideBar";
+import "./App.css";
 
-export default () => (
-  <div className="wrapper">
-    <div className="menu-summary">
-      <div className="container">
-        <div className="row">
-          <div className="col-6 menu-summary-left">
-            <span>5 items</span>
+// function addItemFromSideBar(item) {
+//   console.log("*test", item);
+// }
+
+// export default () => {
+//   // const [menuPreview, setMenuPreview] = useState([]);
+//   return (
+//     <div className="wrapper">
+//       <div className="menu-summary">
+//         <div className="container">
+//           <MenuSummary />
+//         </div>
+//       </div>
+//       <div className="container menu-builder">
+//         <div className="row">
+//           <SideMenu addItemFromSideBar={addItemFromSideBar} />
+//           <MenuPreview />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+// Can we get this to work with Hooks?
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { menu: [] };
+  }
+
+  addItemFromSideBar = (item) => {
+    const newMenu = [...this.state.menu, item];
+    console.log("*test", item);
+    console.log("*state", this.state);
+    console.log("*newMenu", newMenu);
+    this.setState({ menu: newMenu });
+  };
+
+  render() {
+    console.log("*state", this.state);
+    return (
+      <div className="wrapper">
+        <div className="menu-summary">
+          <div className="container">
+            <MenuSummary />
           </div>
-          <div className="col-6 menu-summary-right">
-            6x <span className="dietary">ve</span>
-            4x <span className="dietary">v</span>
-            12x <span className="dietary">n!</span>
+        </div>
+        <div className="container menu-builder">
+          <div className="row">
+            <SideMenu addItemFromSideBar={this.addItemFromSideBar} />
+            <MenuPreview />
           </div>
         </div>
       </div>
-    </div>
-    <div className="container menu-builder">
-      <div className="row">
-        <div className="col-4">
-          <ul className="item-picker">
-          <li className="item">
-              <h2>Dummy item</h2>
-              <p>
-                <span className="dietary">ve</span>
-                <span className="dietary">v</span>
-                <span className="dietary">n!</span>
-              </p>
-            </li>
-            <li className="item">
-              <h2>Dummy item</h2>
-              <p>
-                <span className="dietary">ve</span>
-                <span className="dietary">v</span>
-                <span className="dietary">n!</span>
-              </p>
-            </li>
-            <li className="item">
-              <h2>Dummy item</h2>
-              <p>
-                <span className="dietary">ve</span>
-                <span className="dietary">v</span>
-                <span className="dietary">n!</span>
-              </p>
-            </li>
-            <li className="item">
-              <h2>Dummy item</h2>
-              <p>
-                <span className="dietary">ve</span>
-                <span className="dietary">v</span>
-                <span className="dietary">n!</span>
-              </p>
-            </li>
-            <li className="item">
-              <h2>Dummy item</h2>
-              <p>
-                <span className="dietary">ve</span>
-                <span className="dietary">v</span>
-                <span className="dietary">n!</span>
-              </p>
-            </li>
-            <li className="item">
-              <h2>Dummy item</h2>
-              <p>
-                <span className="dietary">ve</span>
-                <span className="dietary">v</span>
-                <span className="dietary">n!</span>
-              </p>
-            </li>
-            <li className="item">
-              <h2>Dummy item</h2>
-              <p>
-                <span className="dietary">ve</span>
-                <span className="dietary">v</span>
-                <span className="dietary">n!</span>
-              </p>
-            </li>
-          </ul>
-        </div>
-        <div className="col-8">
-          <h2>Menu preview</h2>
-          <ul className="menu-preview">
-            <li className="item">
-              <h2>Dummy item</h2>
-              <p>
-                <span className="dietary">ve</span>
-                <span className="dietary">v</span>
-                <span className="dietary">n!</span>
-              </p>
-              <button className="remove-item">x</button>
-            </li>
-            <li className="item">
-              <h2>Dummy item</h2>
-              <p>
-                <span className="dietary">ve</span>
-                <span className="dietary">v</span>
-                <span className="dietary">n!</span>
-              </p>
-              <button className="remove-item">x</button>
-            </li>
-            <li className="item">
-              <h2>Dummy item</h2>
-              <p>
-                <span className="dietary">ve</span>
-                <span className="dietary">v</span>
-                <span className="dietary">n!</span>
-              </p>
-              <button className="remove-item">x</button>
-            </li>
-            <li className="item">
-              <h2>Dummy item</h2>
-              <p>
-                <span className="dietary">ve</span>
-                <span className="dietary">v</span>
-                <span className="dietary">n!</span>
-              </p>
-              <button className="remove-item">x</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+    );
+  }
+}
+
+export default App;
