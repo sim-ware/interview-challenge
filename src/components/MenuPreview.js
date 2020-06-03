@@ -19,12 +19,20 @@ const test = [
     dietaries: ["n!"],
   },
 ];
-function MenuPreview() {
+function MenuPreview(props) {
   return (
     <div className="col-8">
       <h2>Menu preview</h2>
       <ul className="menu-preview">
-        <FoodItem
+        {props.menu.map((t) => (
+          <FoodItem
+            removable={true}
+            key={t.id}
+            item={t}
+            // addItemFromSideBar={props.addItemFromSideBar}
+          />
+        ))}
+        {/* <FoodItem
           removable={true}
           key={test[0].id}
           item={test[0]}
@@ -41,7 +49,7 @@ function MenuPreview() {
           key={test[2].id}
           item={test[2]}
           // addItemFromSideBar={props.addItemFromSideBar}
-        />
+        /> */}
       </ul>
     </div>
   );

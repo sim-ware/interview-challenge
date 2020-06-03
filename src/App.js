@@ -55,7 +55,7 @@ class App extends React.Component {
         <div className="container menu-builder">
           <div className="row">
             <SideMenu addItemFromSideBar={this.addItemFromSideBar} />
-            <MenuPreview />
+            <MenuPreview menu={this.state.menu} />
           </div>
         </div>
       </div>
