@@ -30,20 +30,34 @@ class App extends React.Component {
     let nCount = 0;
     menu.forEach((item) => {
       item.dietaries.forEach((dietary) => {
-        dietary === "v" ? vCount++ : null;
-        dietary === "ve" ? veCount++ : null;
-        dietary === "gf" ? gfCount++ : null;
-        dietary === "df" ? dfCount++ : null;
-        dietary === "rsf" ? rsfCount++ : null;
-        dietary === "n!" ? nCount++ : null;
+        if (dietary === "v") {
+          vCount++;
+        }
+        if (dietary === "ve") {
+          veCount++;
+        }
+        if (dietary === "gf") {
+          gfCount++;
+        }
+        if (dietary === "df") {
+          dfCount++;
+        }
+        if (dietary === "rsf") {
+          rsfCount++;
+        }
+        if (dietary === "n!") {
+          nCount++;
+        }
       });
     });
-    console.log("*vCount", vCount);
-    console.log("*veCount", veCount);
-    console.log("*gfCount", gfCount);
-    console.log("*dfCount", dfCount);
-    console.log("*rsfCount", rsfCount);
-    console.log("*nCount", nCount);
+    return {
+      vCount,
+      veCount,
+      gfCount,
+      dfCount,
+      rsfCount,
+      nCount,
+    };
   };
 
   render() {
