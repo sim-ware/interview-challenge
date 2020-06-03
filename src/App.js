@@ -25,7 +25,7 @@ class App extends React.Component {
       <div className="wrapper">
         <div className="menu-summary">
           <div className="container">
-            <MenuSummary />
+            <MenuSummary itemCount={this.state.menu.length} />
           </div>
         </div>
         <div className="container menu-builder">
