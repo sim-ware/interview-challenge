@@ -6,6 +6,7 @@ import "../App.css";
 function FoodItem(props) {
   const { item, addItemFromSideBar, removeItemFromSideBar, removable } = props;
   const { name, dietaries } = item;
+
   return (
     <li
       style={{ cursor: "pointer" }}

@@ -5,8 +5,8 @@ import SideMenu from "./components/SideBar";
 import "./App.css";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { menu: [] };
   }
 
@@ -50,6 +50,7 @@ class App extends React.Component {
         }
       });
     });
+
     return {
       vCount,
       veCount,

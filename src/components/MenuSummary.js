@@ -10,6 +10,7 @@ function MenuSummary(props) {
     rsfCount,
     nCount,
   } = props.dietaryCount;
+
   return (
     <div className="row">
       <div className="col-6 menu-summary-left">
